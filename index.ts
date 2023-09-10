@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import { connectDB } from './config/db';
 import { errorHandler } from "./middleware/errorMiddleware";
 import userRoutes from './routes/userRoutes';
+import questionRoutes from './routes/questionRoutes';
 import cors from 'cors';
 
 dotenv.config();
@@ -19,6 +20,7 @@ app.use(cors({
 }));
 
 app.use('/api/users', userRoutes);
+app.use('/api/questions', questionRoutes);
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Express + TypeScript Server');
