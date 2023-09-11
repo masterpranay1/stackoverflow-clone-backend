@@ -17,8 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
   origin: [
-    'https://stackoverflow-clone-backend-vrer.onrender.com',
-    'http://localhost:5173',
+    'https://stackoverflow-clone-frontend.onrender.com',
   ],
 }));
 
