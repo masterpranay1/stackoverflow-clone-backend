@@ -84,7 +84,9 @@ const loginUser = asyncHandler(async (req: Request, res: Response) => {
       res.status(400);
       throw new Error("Invalid login info");
     }
-
+    // set the access-control-allow-orign header to the frontend url
+    // @ts-ignore
+    res.header("Access-Control-Allow-Origin", 'https://stackoverflow-clone-frontend.onrender.com');
     res.json({
       _id: user.id,
       name: user.name,
