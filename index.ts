@@ -16,7 +16,10 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin: 'https://stackoverflow-clone-backend-vrer.onrender.com',
+  origin: [
+    'https://stackoverflow-clone-backend-vrer.onrender.com',
+    'http://localhost:5173',
+  ],
 }));
 
 app.use('/api/users', userRoutes);
